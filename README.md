@@ -1,4 +1,4 @@
-# Angular Standalone Admin Dashboard
+# Angular Standalone Admin Panel
 
 > Enterprise reference implementation of modern frontend architecture using Angular 19 Standalone.
 
@@ -474,7 +474,9 @@ Tasks:
 
 # Repository Status
 
-Current Version:v0.1.0
+Current Version:
+
+**v0.1.0**
 
 
 Status:
