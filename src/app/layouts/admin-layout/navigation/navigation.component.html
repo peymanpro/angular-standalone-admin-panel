@@ -1,0 +1,22 @@
+<nav class="navigation" aria-label="Main navigation">
+  <a
+    class="navigation__link"
+    routerLink="/dashboard"
+    routerLinkActive="navigation__link--active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    Dashboard
+  </a>
+
+  <a class="navigation__link" routerLink="/users" routerLinkActive="navigation__link--active">
+    Users
+  </a>
+
+  <a class="navigation__link" routerLink="/products" routerLinkActive="navigation__link--active">
+    Products
+  </a>
+
+  <a class="navigation__link" routerLink="/settings" routerLinkActive="navigation__link--active">
+    Settings
+  </a>
+</nav>
