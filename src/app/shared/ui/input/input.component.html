@@ -3,5 +3,13 @@
     <label [for]="id()">{{ label() }}</label>
   }
 
-  <input [id]="id()" [type]="type()" [placeholder]="placeholder()" [disabled]="disabled()" />
+  <input
+    [id]="id()"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [disabled]="disabled() || isFormDisabled"
+    [value]="value"
+    (input)="handleInput($any($event.target).value)"
+    (blur)="handleBlur()"
+  />
 </div>
