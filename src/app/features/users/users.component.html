@@ -1,1 +1,54 @@
-<p>users works!</p>
+<section class="users">
+  <header class="users__header">
+    <div>
+      <h1>Users</h1>
+      <p>Manage users retrieved from the API.</p>
+    </div>
+  </header>
+
+  @if (isLoading) {
+    <app-loading label="Loading users..." />
+  } @else if (errorMessage) {
+    <app-empty-state title="Unable to load users" [message]="errorMessage" />
+  } @else if (!users.length) {
+    <app-empty-state
+      title="No users available"
+      message="There are currently no users to display."
+    />
+  } @else {
+    <div class="users__table-wrapper">
+      <table class="users__table">
+        <thead>
+          <tr>
+            <th scope="col">User</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (user of users; track user.id) {
+            <tr>
+              <td>
+                <div class="users__user">
+                  <img
+                    class="users__avatar"
+                    [src]="user.image"
+                    [alt]="user.firstName + ' ' + user.lastName"
+                  />
+
+                  <span> {{ user.firstName }} {{ user.lastName }} </span>
+                </div>
+              </td>
+
+              <td>{{ user.email }}</td>
+              <td>{{ user.age }}</td>
+              <td>{{ user.gender }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</section>
