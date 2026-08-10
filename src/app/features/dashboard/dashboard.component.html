@@ -1,1 +1,36 @@
-<p>dashboard works!</p>
+<section class="dashboard">
+  <header class="dashboard__header">
+    <div>
+      <h1>Dashboard</h1>
+      <p>Overview of product data from the API.</p>
+    </div>
+  </header>
+
+  @if (isLoading) {
+    <app-loading label="Loading dashboard data..." />
+  } @else if (errorMessage) {
+    <app-empty-state title="Unable to load dashboard" [message]="errorMessage" />
+  } @else if (!products.length) {
+    <app-empty-state
+      title="No products available"
+      message="There are currently no products to display."
+    />
+  } @else {
+    <div class="dashboard__grid">
+      <article class="dashboard__card">
+        <span class="dashboard__label">Products</span>
+        <strong>{{ productCount }}</strong>
+      </article>
+
+      <article class="dashboard__card">
+        <span class="dashboard__label">Average Rating</span>
+        <strong>{{ averageRating }}</strong>
+      </article>
+
+      <article class="dashboard__card">
+        <span class="dashboard__label">Total Stock</span>
+        <strong>{{ totalStock }}</strong>
+      </article>
+    </div>
+  }
+</section>
