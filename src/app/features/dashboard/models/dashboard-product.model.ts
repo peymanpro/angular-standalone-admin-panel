@@ -4,6 +4,8 @@ export interface DashboardProduct {
   price: number;
   rating: number;
   stock: number;
+  category: string;
+  brand?: string;
   thumbnail: string;
 }
 
