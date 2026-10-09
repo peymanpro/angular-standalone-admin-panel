@@ -76,9 +76,6 @@
           @for (outcome of state().prediction?.alternatives ?? []; track outcome.route) {
             <div class="adaptive-runtime__probability-row">
               <span>{{ formatRoute(outcome.route) }}</span>
-              <div class="adaptive-runtime__bar" aria-hidden="true">
-                <span [style.width.%]="outcome.probability * 100"></span>
-              </div>
               <strong>{{ formatProbability(outcome.probability) }}</strong>
             </div>
           }
