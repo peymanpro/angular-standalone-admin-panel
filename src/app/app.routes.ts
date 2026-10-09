@@ -59,6 +59,14 @@ export const routes: Routes = [
             (component) => component.SettingsComponent,
           ),
       },
+      {
+        path: 'adaptive',
+        title: 'Adaptive Runtime',
+        loadComponent: () =>
+          import('./features/adaptive-runtime/adaptive-runtime.component').then(
+            (component) => component.AdaptiveRuntimeComponent,
+          ),
+      },
     ],
   },
   {

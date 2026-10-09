@@ -1,484 +1,97 @@
-# Angular Standalone Admin Panel
-
-> Enterprise reference implementation of modern frontend architecture using Angular 19 Standalone.
-
----
-
-# Overview
-
-Building scalable frontend applications requires more than creating components and pages.
-
-This project demonstrates how to design and implement a production-oriented enterprise frontend application using modern Angular architecture patterns.
-
-The repository focuses on:
-
-- Angular 19 Standalone Architecture
-- Feature-based application structure
-- Reusable UI component design
-- Reactive state management
-- Scalable frontend organization
-- Enterprise development practices
-
-This project is not intended to be another admin template.
-
-The goal is to provide a reference implementation of how modern Angular applications can be structured for long-term maintainability and scalability.
-
----
-
-# Vision
-
-The vision of this project is to demonstrate a realistic enterprise frontend architecture that can evolve from a small application into a large-scale business platform.
-
-The project emphasizes:
-
-- Clean separation of responsibilities
-- Maintainable architecture
-- Reusable components
-- Consistent UI patterns
-- Developer productivity
-- Production-ready practices
-
----
-
-# Why This Project Exists
-
-Many Angular projects start simple but become difficult to maintain as features grow.
-
-Common problems include:
-
-- Large components
-- Shared code duplication
-- Poor feature isolation
-- Tight coupling between UI and business logic
-- Inconsistent design patterns
-
-This project demonstrates approaches to avoid these problems by applying:
-
-- Feature-driven architecture
-- Shared UI systems
-- Core application services
-- Reactive programming patterns
-- Enterprise frontend principles
-
----
-
-# Architecture
-
-The project follows a feature-based enterprise frontend architecture.
-
-                Application UI
-
-                      |
-
-                      v
-
-                Feature Layer
-
-                      |
-
-                      v
-
-              Facade / State Layer
-
-                      |
-
-          +-----------+-----------+
-
-          |                       |
-
-          v                       v
-
-    API Services            Shared UI System
-
-          |
-
-          v
-
-      HttpClient
-
-The architecture separates:
-
-- Business features
-- Application infrastructure
-- UI components
-- Data communication
-- Shared resources
-
----
-
-# Project Structure
-
-src/
-
-├── app/
-
-│
-
-├── core/
-
-│ ├── auth/
-
-│ ├── http/
-
-│ ├── config/
-
-│ └── error-handling/
-
-│
-
-├── shared/
-
-│ ├── ui/
-
-│ ├── directives/
-
-│ ├── pipes/
-
-│ └── validators/
-
-│
-
-├── layouts/
-
-│ ├── admin-layout/
-
-│ └── auth-layout/
-
-│
-
-├── features/
-
-│ ├── dashboard/
-
-│ ├── users/
-
-│ ├── products/
-
-│ └── settings/
-
-│
-
-└── app.routes.ts
-
----
-
-# Core Responsibilities
-
-## Core
-
-Contains application-wide infrastructure.
-
-Responsibilities:
-
-- Authentication
-- HTTP configuration
-- Interceptors
-- Guards
-- Global error handling
-- Application configuration
-
----
-
-## Shared
-
-Contains reusable resources without business logic.
-
-Examples:
-
-- UI Components
-- Pipes
-- Directives
-- Validators
-- Common utilities
-
----
-
-## Layouts
-
-Responsible for application composition.
-
-Includes:
-
-- Admin Layout
-- Authentication Layout
-- Navigation structure
-
----
-
-## Features
-
-Contains business functionality.
-
-Examples:
-
-### Dashboard
-
-- Analytics widgets
-- Statistics
-- Activity information
-
-### Users
-
-- User management
-- Search
-- Filtering
-- Pagination
-
-### Products
-
-- Product management
-- Forms
-- CRUD operations
-
----
-
-# Design Principles
-
-The project follows these principles:
-
-- Standalone-first Angular architecture
-- Feature-based organization
-- Separation of concerns
-- Reusable UI components
-- Composition over inheritance
-- SOLID principles
-- Reactive programming
-- Scalable folder structure
-- Maintainable code organization
-
----
-
-# Development Roadmap
-
-## Phase 0 — Foundation
-
-Status: Completed ✅
-
-Implemented:
-
-- Angular 19 setup
-- Standalone Components
-- pnpm package management
-- Routing configuration
-- SCSS configuration
-
----
-
-# Phase 1 — Engineering Setup
-
-Status: Planned
-
-Goals:
-
-Create a professional development environment.
-
-Tasks:
-
-- ESLint configuration
-- Prettier configuration
-- Husky setup
-- lint-staged
-- VS Code workspace configuration
-- Git workflow configuration
-
----
-
-# Phase 2 — Enterprise Architecture
-
-Status: Planned
-
-Goals:
-
-Establish scalable application architecture.
-
-Tasks:
-
-- Core layer
-- Shared layer
-- Layout layer
-- Feature structure
-- Environment configuration
-- API communication foundation
-
----
-
-# Phase 3 — Design System
-
-Status: Planned
-
-Goals:
-
-Create reusable UI foundations.
-
-Tasks:
-
-- Button components
-- Card components
-- Table components
-- Modal components
-- Form controls
-- Loading states
-- Empty states
-- Notification system
-
----
-
-# Phase 4 — Application Shell
-
-Status: Planned
-
-Goals:
-
-Create the main application layout.
-
-Tasks:
-
-- Sidebar navigation
-- Header
-- Responsive layout
-- Theme foundation
-- Navigation system
-
----
-
-# Phase 5 — Authentication
-
-Status: Planned
-
-Tasks:
-
-- Login page
-- Authentication service
-- Route guards
-- User session management
-- HTTP interceptor
-
----
-
-# Phase 6 — Dashboard
-
-Status: Planned
-
-Tasks:
-
-- Statistics cards
-- Charts
-- Activity widgets
-- Dashboard layout
-
----
-
-# Phase 7 — Users Management
-
-Status: Planned
-
-Tasks:
-
-- Users list
-- Search
-- Filtering
-- Pagination
-- User details
-- User forms
-
----
-
-# Phase 8 — Products Management
-
-Status: Planned
-
-Tasks:
-
-- Product list
-- CRUD operations
-- Reactive forms
-- Validation
-- API integration
-
----
-
-# Phase 9 — Enterprise Features
-
-Status: Planned
-
-Tasks:
-
-- Role-based navigation
-- Advanced error handling
-- Global loading management
-- Feature flags
-- Application configuration
-
----
-
-# Phase 10 — Testing & Quality
-
-Status: Planned
-
-Tasks:
-
-- Unit testing
-- Component testing
-- Service testing
-- Code coverage
-- Quality improvements
-
----
-
-# Phase 11 — Production Ready
-
-Status: Planned
-
-Tasks:
-
-- Production optimization
-- Docker deployment
-- CI/CD pipeline
-- Performance analysis
-- Documentation improvements
-
----
-
-# Technology Stack
-
-- Angular 19
-- Standalone Components
-- TypeScript
-- RxJS
-- Angular Signals
-- Angular Material
-- Tailwind CSS
-- SCSS
-- pnpm
-
----
-
-# Repository Status
-
-Current Version:
-
-**v0.1.0**
-
-Status:
-
-🚧 Active Development
-
----
-
-# Future Roadmap
-
-Future improvements may include:
-
-- Advanced permission system
-- Internationalization
-- Dark mode
-- PWA support
-- Micro frontend readiness
-- Advanced state management
-- Accessibility improvements
-
----
-
-# License
-
-MIT License
+# LNASF Adaptive Admin Console
+
+An Angular 19 standalone admin application and a practical reference implementation of the [Learning-Native Adaptive Software Framework (LNASF)](https://github.com/peymanpro/learning-native-adaptive-software-framework).
+
+The first implementation focuses on one small, measurable runtime adaptation: **learning navigation transitions and speculatively preloading a likely next page when the evidence and decision policy justify the cost**.
+
+This is not an LLM-powered product. It uses a transparent, native TypeScript transition-frequency model to demonstrate the LNASF observe–learn–predict–decide–adapt–measure loop.
+
+## Implemented
+
+- **Learning:** an in-memory first-order transition model estimates the empirical probability of the next route from observed route-to-route navigation.
+- **Explicit decision policy:** preloading requires at least 3 observations from the current route, a transition probability of at least 65%, a target on the allowlist, and an available speculative-work budget.
+- **Constrained adaptation:** only known lazy-loaded app routes may be preloaded; at most one speculative code-chunk load can be in flight.
+- **Deterministic fallback:** when evidence is weak, adaptation is disabled, a target is unavailable, or preloading fails, normal Angular navigation remains the fallback.
+- **Measurement:** the UI reports observations, distinct transitions, attempted/completed/failed preloads, and whether the next navigation matched the previous completed preload.
+- **Local-first behavior:** only route names are observed, in memory. No user identity, form values, product records, remote model, or external telemetry is sent by the learning service.
+- **Adaptive Runtime screen:** inspect the current prediction, observed alternatives, decision reason, runtime counters, and adaptation toggle at `/adaptive`.
+
+## How the LNASF loop maps to this app
+
+```text
+Angular Router navigation
+        |
+        v
+Observe route transition
+        |
+        v
+TypeScript transition-frequency model
+        |
+        v
+Predict the next route + empirical probability
+        |
+        v
+Decision policy (evidence, allowlist, budget, enabled state)
+        |
+        +---- Reject / uncertain ----> normal on-demand navigation
+        |
+        v
+Speculatively import the permitted lazy-route chunk
+        |
+        v
+Measure later route match / miss and preload result
+```
+
+The corresponding implementation lives in:
+
+- `src/app/core/lnasf/transition-model.ts` — transparent transition learning and prediction.
+- `src/app/core/lnasf/decision-policy.ts` — explicit separation between prediction and action.
+- `src/app/core/lnasf/adaptive-navigation.service.ts` — routing observations, allowlisted preloading, and runtime metrics.
+- `src/app/features/adaptive-runtime/` — live inspection and controls.
+- `docs/LNASF-REFERENCE-IMPLEMENTATION.md` — design mapping, evaluation protocol, and current limitations.
+
+## Run locally
+
+Requires a Node.js version compatible with Angular 19 and pnpm.
+
+```bash
+pnpm install --frozen-lockfile
+pnpm start
+```
+
+Sign in through the existing demo authentication flow, then open **Adaptive Runtime** from the sidebar. Visit Dashboard, Products, Users, and Settings in repeated patterns. The model learns only transitions that occur during the current page session; refreshing the browser resets the learned history.
+
+Quality commands:
+
+```bash
+pnpm build
+pnpm lint
+pnpm test -- --watch=false
+pnpm format:check
+```
+
+## Evaluation protocol
+
+The dashboard exposes the model's observations and runtime outcomes, but this repository does **not** yet claim a measured performance improvement. To evaluate the hypothesis responsibly:
+
+1. Exercise repeatable route sequences with adaptive preloading enabled and disabled.
+2. Record route-navigation timings and chunk/network activity in browser developer tools.
+3. Compare prediction hit rate, preload misses, extra bytes loaded, and navigation latency.
+4. Repeat with cold and warm caches; report both results.
+5. Keep the deterministic baseline and include adaptation overhead in any performance claim.
+
+A prediction hit is not, by itself, proof of a latency improvement. Preloading can cost bandwidth and CPU when a prediction is wrong or a route is never visited.
+
+## Scope and limitations
+
+- This is an initial reference implementation of selected LNASF principles, not a complete realization of every framework mode or algorithm.
+- The model is deliberately simple and interpretable; it is not a neural network or language model.
+- Route history and runtime counters live in memory and reset on full page reload.
+- The allowlist and thresholds are fixed in code for this first experiment.
+- Predictive preloading warms the JavaScript module cache; the exact benefit depends on the browser, bundler, network, and route sequence.
+- Existing product and user data still comes from the repository's demo API configuration.
+
+## Related work
+
+- [Learning-Native Adaptive Software Framework (LNASF)](https://github.com/peymanpro/learning-native-adaptive-software-framework)
+- [Angular standalone admin panel history](https://github.com/peymanpro/angular-standalone-admin-panel/commits/master)
