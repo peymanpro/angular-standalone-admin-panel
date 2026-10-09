@@ -44,7 +44,7 @@ export class DecisionPolicy {
     }
 
     if (alreadyLoaded) {
-      return baseline('The predicted route is already loading or has been preloaded.');
+      return baseline('The predicted route is already loaded, loading, or preloaded.');
     }
 
     if (!budgetAvailable) {

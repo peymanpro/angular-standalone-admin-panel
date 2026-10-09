@@ -57,6 +57,7 @@ export class AdaptiveNavigationService {
   });
   private readonly pendingRoutes = new Set<ManagedRoute>();
   private readonly preloadedRoutes = new Set<ManagedRoute>();
+  private readonly visitedRoutes = new Set<ManagedRoute>();
   private enabled = true;
   private lastRoute: ManagedRoute | null = null;
   private lastSpeculation: { target: ManagedRoute } | null = null;
@@ -164,6 +165,7 @@ export class AdaptiveNavigationService {
       this.model.observe(this.lastRoute, route);
     }
 
+    this.visitedRoutes.add(route);
     this.lastRoute = route;
     this.reconsiderCurrentRoute(route);
   }
@@ -173,7 +175,8 @@ export class AdaptiveNavigationService {
     const targetIsKnown = prediction !== null && isManagedRoute(prediction.target);
     const alreadyLoaded =
       prediction !== null &&
-      (this.preloadedRoutes.has(prediction.target as ManagedRoute) ||
+      (this.visitedRoutes.has(prediction.target as ManagedRoute) ||
+        this.preloadedRoutes.has(prediction.target as ManagedRoute) ||
         this.pendingRoutes.has(prediction.target as ManagedRoute));
     const decision = this.policy.evaluate(
       prediction,
@@ -209,7 +212,11 @@ export class AdaptiveNavigationService {
 
     const target = prediction.target;
 
-    if (this.pendingRoutes.has(target) || this.preloadedRoutes.has(target)) {
+    if (
+      this.visitedRoutes.has(target) ||
+      this.pendingRoutes.has(target) ||
+      this.preloadedRoutes.has(target)
+    ) {
       return;
     }
 

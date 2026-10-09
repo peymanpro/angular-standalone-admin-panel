@@ -53,11 +53,11 @@ describe('DecisionPolicy', () => {
     expect(decision.reason).toContain('allowlist');
   });
 
-  it('does not start duplicate preloading', () => {
+  it('does not preload routes already visited in this session', () => {
     const decision = policy.evaluate(prediction, true, true, true, true);
 
     expect(decision.shouldPreload).toBeFalse();
-    expect(decision.reason).toContain('already loading');
+    expect(decision.reason).toContain('already loaded');
   });
 
   it('respects the global speculative-work budget', () => {

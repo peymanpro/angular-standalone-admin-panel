@@ -35,7 +35,7 @@ The initial policy requires all of the following:
 - The target exists in the explicit route-loader allowlist.
 - At least 3 outgoing transitions have been observed from the current route.
 - The empirical probability of the leading route is at least 0.65.
-- The route is not already pending or preloaded.
+- The target has not already been visited, preloaded, or queued.
 - No other speculative preload is currently in flight.
 
 These values are experimental defaults, not statistically optimal thresholds. They should be evaluated against actual browser navigation data before being tuned.
