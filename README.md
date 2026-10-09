@@ -94,4 +94,4 @@ A prediction hit is not, by itself, proof of a latency improvement. Preloading c
 ## Related work
 
 - [Learning-Native Adaptive Software Framework (LNASF)](https://github.com/peymanpro/learning-native-adaptive-software-framework)
-- [Angular standalone admin panel history](https://github.com/peymanpro/angular-standalone-admin-panel/commits/master)
+- [LNASF Adaptive Admin Console history](https://github.com/peymanpro/LNASF-Adaptive-Admin-Console/commits/master)
